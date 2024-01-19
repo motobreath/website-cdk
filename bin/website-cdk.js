@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 
+const websiteId = "website1"
+
 const cdk = require('aws-cdk-lib');
 const { WebsiteCdkStack } = require('../lib/website-cdk-stack');
 
 const app = new cdk.App();
-new WebsiteCdkStack(app, 'WebsiteCdkStack', {
+new WebsiteCdkStack(app, websiteId, {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */
