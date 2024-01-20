@@ -1,27 +1,23 @@
 // Lambda function handler
 exports.handler = async (event, context) => {
-    try {
-        // Your logic goes here
+   // Extract the request path and HTTP method
+  const path = event.path;
+  const httpMethod = event.httpMethod;
 
-        // Example: Log the incoming event
-        console.log("Received event:", JSON.stringify(event, null, 2));
+  // Create the response body
+  const body = {
+    message: `You requested ${httpMethod} ${path}`
+  };
 
-        // Example: Return a response
-        const response = {
-            statusCode: 200,
-            body: JSON.stringify("Hello from Lambda!"),
-        };
+  // Create the response headers
+  const headers = {
+    "Content-Type": "application/json"
+  };
 
-        return response;
-    } catch (error) {
-        console.error("Error:", error);
-
-        // Example: Return an error response
-        const errorResponse = {
-            statusCode: 500,
-            body: JSON.stringify("Internal Server Error"),
-        };
-
-        return errorResponse;
-    }
+  // Return the API Gateway response
+  return {
+    statusCode: 200,
+    headers: headers,
+    body: JSON.stringify(body)
+  };
 };
