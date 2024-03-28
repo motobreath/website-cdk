@@ -5,3 +5,7 @@ node_modules
 cdk.out
 
 .DS_Store
+
+#use local setting not committed to git. 
+#Will match environment.sh variables
+bin/environment.local.sh
