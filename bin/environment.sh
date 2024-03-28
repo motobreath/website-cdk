@@ -3,6 +3,7 @@ if [ $1 == "dev" ]
 then
   export CDK_WEBSITE_DOMAIN=""
   export CDK_ROUTE_53_ZONE_NAME=""
+  export CDK_ROUTE_53_HOSTED_ZONE_ID=""
   
 
 elif [ $1 == "prd" ]
